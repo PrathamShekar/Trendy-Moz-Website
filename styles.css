@@ -976,7 +976,7 @@ textarea {
 
 .product-modal-close {
   position: absolute;
-  top: 16px;
+  top: 24px;
   right: 16px;
   width: 36px;
   height: 36px;
@@ -1123,6 +1123,10 @@ textarea {
   background: var(--accent-glow);
 }
 
+.size-btn:active {
+  transform: scale(0.95);
+}
+
 .size-btn.active {
   border-color: var(--accent);
   background: var(--accent);
@@ -1196,6 +1200,10 @@ textarea {
   transform: translateY(-1px);
 }
 
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
 .btn-secondary {
   display: flex;
   align-items: center;
@@ -1216,6 +1224,10 @@ textarea {
 .btn-secondary:hover {
   border-color: var(--accent);
   background: var(--accent-glow);
+}
+
+.btn-secondary:active {
+  transform: scale(0.97);
 }
 
 .btn-secondary svg,
@@ -1451,6 +1463,10 @@ textarea {
 .cart-qty-btn:hover {
   background: var(--accent-glow);
   color: var(--accent);
+}
+
+.cart-qty-btn:active {
+  transform: scale(0.92);
 }
 
 .cart-item-qty span {
