@@ -53,8 +53,8 @@ const PRODUCTS = [
     category: 'oversized',
     dateAdded: '2026-01-22',
     sizes: ['M', 'L', 'XL'],
-    frontImage: 'assets/17.webp',
-    backImage: 'assets/18.webp',
+    frontImage: 'assets/40.webp',
+    backImage: 'assets/41.webp',
   },
   {
     id: 5,
