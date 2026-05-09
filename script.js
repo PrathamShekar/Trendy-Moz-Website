@@ -53,8 +53,8 @@ const PRODUCTS = [
     category: 'oversized',
     dateAdded: '2026-01-22',
     sizes: ['M', 'L', 'XL'],
-    frontImage: 'assets/40.webp',
-    backImage: 'assets/41.webp',
+    frontImage: 'assets/17.webp',
+    backImage: 'assets/18.webp',
   },
   {
     id: 5,
@@ -395,7 +395,8 @@ function cacheDom() {
   DOM.qtyPlus = document.getElementById('qty-plus');
   DOM.addToCartBtn = document.getElementById('add-to-cart-btn');
   DOM.buyNowBtn = document.getElementById('buy-now-btn');
-
+  DOM.shareBtn = document.getElementById('share-btn');
+  DOM.whatsappShareBtn = document.getElementById('whatsapp-share-btn');
   DOM.modalCloseBtn = document.getElementById('modal-close-btn');
   DOM.checkoutOverlay = document.getElementById('checkout-overlay');
   DOM.checkoutCloseBtn = document.getElementById('checkout-close-btn');
@@ -775,8 +776,51 @@ function closeTerms() {
   unlockBody();
 }
 
+// ========== PARTILHAR ==========
+function shareProduct(productId) {
+  const product = PRODUCTS.find(p => p.id === productId);
+  if (!product) return;
 
+  const shareData = {
+    title: `${product.name} - TrendyMoz`,
+    text: `Veja a ${product.name} da TrendyMoz! ${formatPrice(product.price)}`,
+    url: window.location.href,
+  };
 
+  if (navigator.share) {
+    navigator.share(shareData).catch(() => { });
+  } else {
+    navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`).then(() => {
+      showToast('Link copiado!');
+    }).catch(() => {
+      showToast('Link copiado!');
+    });
+  }
+}
+
+function shareViaWhatsApp(productId) {
+  const product = PRODUCTS.find(p => p.id === productId);
+  if (!product) return;
+
+  const text = encodeURIComponent(
+    `🔥 Veja a ${product.name} da TrendyMoz!\n💰 Preço: ${formatPrice(product.price)}\n🛒 Compra agora: ${window.location.href}`
+  );
+  window.open(`https://wa.me/?text=${text}`, '_blank');
+}
+
+// ========== ENCOMENDAR VIA WHATSAPP ==========
+function sendCartToWhatsApp() {
+  if (cart.length === 0) return;
+
+  let message = 'Encomenda TrendyMoz\n\n';
+  cart.forEach((item, i) => {
+    message += `${i + 1}. ${item.name}\n   Cor: ${item.color}\n   Tamanho: ${item.size}\n   Qtd: ${item.qty}\n   Preço: ${formatPrice(item.price * item.qty)}\n\n`;
+  });
+  message += `━━━━━━━━━━━━━━━\nTotal: ${formatPrice(getCartTotal())}`;
+
+  const encoded = encodeURIComponent(message);
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`, '_blank');
+}
 
 function placeOrder() {
   const fullName = document.getElementById('checkout-name').value.trim();
@@ -985,7 +1029,13 @@ function init() {
     openCheckout();
   });
 
+  DOM.shareBtn.addEventListener('click', () => {
+    if (currentProduct) shareProduct(currentProduct.id);
+  });
 
+  DOM.whatsappShareBtn.addEventListener('click', () => {
+    if (currentProduct) shareViaWhatsApp(currentProduct.id);
+  });
 
   // ----- Checkout -----
   DOM.checkoutCloseBtn.addEventListener('click', closeCheckout);
