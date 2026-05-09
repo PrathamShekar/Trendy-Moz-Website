@@ -14,8 +14,8 @@ const PRODUCTS = [
     category: 'oversized',
     dateAdded: '2025-10-27',
     sizes: ['M', 'L'],
-    frontImage: 'assets/48.svg',
-    backImage: 'assets/49.svg',
+    frontImage: 'assets/48.webp',
+    backImage: 'assets/49.webp',
   },
   {
     id: 2,
@@ -27,8 +27,8 @@ const PRODUCTS = [
     category: 'oversized',
     dateAdded: '2025-10-28',
     sizes: ['M', 'L'],
-    frontImage: 'assets/68.svg',
-    backImage: 'assets/69.svg'
+    frontImage: 'assets/68.webp',
+    backImage: 'assets/69.webp'
   },
   {
     id: 3,
@@ -40,8 +40,8 @@ const PRODUCTS = [
     category: 'oversized',
     dateAdded: '2026-02-21',
     sizes: ['M', 'L', 'XL'],
-    frontImage: 'assets/71.svg',
-    backImage: 'assets/72.svg',
+    frontImage: 'assets/71.webp',
+    backImage: 'assets/72.webp',
   },
   {
     id: 4,
@@ -53,8 +53,8 @@ const PRODUCTS = [
     category: 'oversized',
     dateAdded: '2026-01-22',
     sizes: ['M', 'L', 'XL'],
-    frontImage: 'assets/80.svg',
-    backImage: 'assets/81.svg',
+    frontImage: 'assets/17.webp',
+    backImage: 'assets/18.webp',
   },
   {
     id: 5,
@@ -66,8 +66,8 @@ const PRODUCTS = [
     category: 'oversized',
     dateAdded: '2026-01-23',
     sizes: ['M', 'L'],
-    frontImage: 'assets/76.svg',
-    backImage: 'assets/77.svg',
+    frontImage: 'assets/76.webp',
+    backImage: 'assets/77.webp',
   },
   {
     id: 6,
@@ -79,21 +79,21 @@ const PRODUCTS = [
     category: 'oversized',
     dateAdded: '2026-01-24',
     sizes: ['S', 'M'],
-    frontImage: 'assets/86.svg',
-    backImage: 'assets/87.svg',
+    frontImage: 'assets/86.webp',
+    backImage: 'assets/87.webp',
   },
   {
     id: 7,
     name: 'Stop Staring',
     color: 'Preto',
     price: 1800,
-    badge: 'Novo',
+    badge: null,
     bestSeller: true,
     category: 'oversized',
     dateAdded: '2026-01-25',
     sizes: ['M', 'L'],
-    frontImage: 'assets/73.svg',
-    backImage: 'assets/74.svg',
+    frontImage: 'assets/73.webp',
+    backImage: 'assets/74.webp',
   },
   {
     id: 8,
@@ -105,21 +105,21 @@ const PRODUCTS = [
     category: 'oversized',
     dateAdded: '2026-01-26',
     sizes: ['M', 'L'],
-    frontImage: 'assets/42.svg',
-    backImage: 'assets/43.svg',
+    frontImage: 'assets/42.webp',
+    backImage: 'assets/43.webp',
   },
   {
     id: 9,
     name: 'Trust No One',
     color: 'Branco',
     price: 2000,
-    badge: 'Novo',
+    badge: null,
     bestSeller: true,
     category: 'oversized',
     dateAdded: '2026-02-27',
     sizes: ['M', 'L'],
     frontImage: 'assets/16.webp',
-    backImage: 'assets/75.svg',
+    backImage: 'assets/75.webp',
   },
   {
     id: 10,
@@ -131,8 +131,8 @@ const PRODUCTS = [
     category: 'oversized',
     dateAdded: '2026-02-28',
     sizes: ['M', 'L'],
-    frontImage: 'assets/117.svg',
-    backImage: 'assets/43.svg',
+    frontImage: 'assets/117.webp',
+    backImage: 'assets/43.webp',
   },
   {
     id: 11,
@@ -144,8 +144,8 @@ const PRODUCTS = [
     category: 'oversized',
     dateAdded: '2026-03-03',
     sizes: ['M', 'L', 'XL'],
-    frontImage: 'assets/58.svg',
-    backImage: 'assets/59.svg',
+    frontImage: 'assets/58.webp',
+    backImage: 'assets/59.webp',
   },
   {
     id: 12,
@@ -157,73 +157,73 @@ const PRODUCTS = [
     category: 'oversized',
     dateAdded: '2026-03-04',
     sizes: ['M', 'L', 'XL'],
-    frontImage: 'assets/52.svg',
-    backImage: 'assets/53.svg',
+    frontImage: 'assets/52.webp',
+    backImage: 'assets/53.webp',
   },
   {
     id: 13,
     name: 'Stop Staring - Niche Edition',
     color: 'Preto',
     price: 2200,
-    badge: 'Novo',
+    badge: null,
     bestSeller: true,
     category: 'oversized',
     dateAdded: '2026-03-05',
     sizes: ['M', 'L', 'XL'],
-    frontImage: 'assets/64.svg',
-    backImage: 'assets/65.svg',
+    frontImage: 'assets/64.webp',
+    backImage: 'assets/65.webp',
   },
   {
     id: 14,
     name: 'XO - Eagle Edition',
     color: 'Preto',
     price: 2500,
-    badge: 'Novo',
+    badge: null,
     bestSeller: false,
     category: 'oversized',
     dateAdded: '2026-03-06',
     sizes: ['M', 'L', 'XL'],
-    frontImage: 'assets/54.svg',
-    backImage: 'assets/55.svg',
+    frontImage: 'assets/54.webp',
+    backImage: 'assets/55.webp',
   },
   {
     id: 15,
     name: 'XO - Not Surprised Edition',
     color: 'Branco',
     price: 2000,
-    badge: 'Novo',
+    badge: null,
     bestSeller: false,
     category: 'oversized',
     dateAdded: '2026-03-07',
     sizes: ['M', 'L', 'XL'],
-    frontImage: 'assets/56.svg',
-    backImage: 'assets/57.svg',
+    frontImage: 'assets/56.webp',
+    backImage: 'assets/57.webp',
   },
   {
     id: 16,
     name: 'Stop Staring',
     color: 'Beige',
     price: 1800,
-    badge: 'Novo',
+    badge: null,
     bestSeller: true,
     category: 'oversized',
     dateAdded: '2026-03-10',
     sizes: ['M', 'L'],
-    frontImage: 'assets/92.svg',
-    backImage: 'assets/93.svg',
+    frontImage: 'assets/92.webp',
+    backImage: 'assets/93.webp',
   },
   {
     id: 17,
     name: 'Stop Staring',
     color: 'Branco',
     price: 1800,
-    badge: 'Novo',
+    badge: null,
     bestSeller: false,
     category: 'oversized',
     dateAdded: '2026-03-09',
     sizes: ['M', 'L'],
-    frontImage: 'assets/98.svg',
-    backImage: 'assets/99.svg',
+    frontImage: 'assets/98.webp',
+    backImage: 'assets/99.webp',
   },
   {
     id: 18,
@@ -235,8 +235,8 @@ const PRODUCTS = [
     category: 'oversized',
     dateAdded: '2025-10-27',
     sizes: ['S', 'M', 'L', 'XL'],
-    frontImage: 'assets/44.svg',
-    backImage: 'assets/45.svg',
+    frontImage: 'assets/44.webp',
+    backImage: 'assets/45.webp',
   },
   {
     id: 19,
@@ -248,8 +248,8 @@ const PRODUCTS = [
     category: 'oversized',
     dateAdded: '2026-01-19',
     sizes: ['S', 'M', 'L', 'XL'],
-    frontImage: 'assets/27.svg',
-    backImage: 'assets/43.svg',
+    frontImage: 'assets/27.webp',
+    backImage: 'assets/43.webp',
   },
   {
     id: 20,
@@ -261,8 +261,8 @@ const PRODUCTS = [
     category: 'oversized',
     dateAdded: '2026-01-19',
     sizes: ['S', 'M', 'L', 'XL'],
-    frontImage: 'assets/29.svg',
-    backImage: 'assets/99.svg',
+    frontImage: 'assets/29.webp',
+    backImage: 'assets/99.webp',
   },
   {
     id: 21,
@@ -273,10 +273,75 @@ const PRODUCTS = [
     bestSeller: false,
     category: 'oversized',
     dateAdded: '2026-01-19',
-    sizes: ['L'],
-    frontImage: 'assets/28.svg',
-    backImage: 'assets/93.svg',
+    sizes: ['S', 'M', 'L', 'XL'],
+    frontImage: 'assets/28.webp',
+    backImage: 'assets/93.webp',
   },
+  {
+    id: 22,
+    name: 'Baby Girl',
+    color: 'Beige',
+    price: 1800,
+    badge: null,
+    bestSeller: false,
+    category: 'oversized',
+    dateAdded: '2026-05-09',
+    sizes: ['M', 'L', 'XL'],
+    frontImage: 'assets/30.webp',
+    backImage: 'assets/31.webp',
+  },
+  {
+    id: 23,
+    name: 'Stay Weird',
+    color: 'Beige',
+    price: 2000,
+    badge: null,
+    bestSeller: false,
+    category: 'oversized',
+    dateAdded: '2026-05-09',
+    sizes: ['M', 'L', 'XL'],
+    frontImage: 'assets/32.webp',
+    backImage: 'assets/33.webp',
+  },
+  {
+    id: 24,
+    name: 'Fresh',
+    color: 'Beige',
+    price: 1950,
+    badge: null,
+    bestSeller: false,
+    category: 'oversized',
+    dateAdded: '2026-05-09',
+    sizes: ['M', 'L', 'XL'],
+    frontImage: 'assets/34.webp',
+    backImage: 'assets/35.webp',
+  },
+  {
+    id: 25,
+    name: 'Baby Girl',
+    color: 'Preto',
+    price: 1800,
+    badge: 'Novo',
+    bestSeller: false,
+    category: 'oversized',
+    dateAdded: '2026-05-09',
+    sizes: ['M', 'L', 'XL'],
+    frontImage: 'assets/36.webp',
+    backImage: 'assets/37.webp',
+  },
+  {
+    id: 26,
+    name: 'Alinhamento Lunar',
+    color: 'Preto',
+    price: 2500,
+    badge: 'Novo',
+    bestSeller: false,
+    category: 'oversized',
+    dateAdded: '2026-05-09',
+    sizes: ['M', 'L', 'XL'],
+    frontImage: 'assets/38.webp',
+    backImage: 'assets/39.webp',
+  }
 ];
 
 const WHATSAPP_NUMBER = '258849642400';
@@ -330,8 +395,7 @@ function cacheDom() {
   DOM.qtyPlus = document.getElementById('qty-plus');
   DOM.addToCartBtn = document.getElementById('add-to-cart-btn');
   DOM.buyNowBtn = document.getElementById('buy-now-btn');
-  DOM.shareBtn = document.getElementById('share-btn');
-  DOM.whatsappShareBtn = document.getElementById('whatsapp-share-btn');
+
   DOM.modalCloseBtn = document.getElementById('modal-close-btn');
   DOM.checkoutOverlay = document.getElementById('checkout-overlay');
   DOM.checkoutCloseBtn = document.getElementById('checkout-close-btn');
@@ -711,63 +775,18 @@ function closeTerms() {
   unlockBody();
 }
 
-// ========== PARTILHAR ==========
-function shareProduct(productId) {
-  const product = PRODUCTS.find(p => p.id === productId);
-  if (!product) return;
 
-  const shareData = {
-    title: `${product.name} - TrendyMoz`,
-    text: `Veja a ${product.name} da TrendyMoz! ${formatPrice(product.price)}`,
-    url: window.location.href,
-  };
 
-  if (navigator.share) {
-    navigator.share(shareData).catch(() => { });
-  } else {
-    navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`).then(() => {
-      showToast('Link copiado!');
-    }).catch(() => {
-      showToast('Link copiado!');
-    });
-  }
-}
-
-function shareViaWhatsApp(productId) {
-  const product = PRODUCTS.find(p => p.id === productId);
-  if (!product) return;
-
-  const text = encodeURIComponent(
-    `🔥 Veja a ${product.name} da TrendyMoz!\n💰 Preço: ${formatPrice(product.price)}\n🛒 Compra agora: ${window.location.href}`
-  );
-  window.open(`https://wa.me/?text=${text}`, '_blank');
-}
-
-// ========== ENCOMENDAR VIA WHATSAPP ==========
-function sendCartToWhatsApp() {
-  if (cart.length === 0) return;
-
-  let message = 'Encomenda TrendyMoz\n\n';
-  cart.forEach((item, i) => {
-    message += `${i + 1}. ${item.name}\n   Cor: ${item.color}\n   Tamanho: ${item.size}\n   Qtd: ${item.qty}\n   Preço: ${formatPrice(item.price * item.qty)}\n\n`;
-  });
-  message += `━━━━━━━━━━━━━━━\nTotal: ${formatPrice(getCartTotal())}`;
-
-  const encoded = encodeURIComponent(message);
-  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`, '_blank');
-}
 
 function placeOrder() {
   const fullName = document.getElementById('checkout-name').value.trim();
   const phone = document.getElementById('checkout-phone').value.trim();
-  const email = document.getElementById('checkout-email').value.trim();
-  const city = document.getElementById('checkout-city').value.trim();
-  const address = document.getElementById('checkout-address').value.trim();
+  const deliveryLocation = document.getElementById('checkout-delivery-location').value.trim();
 
   const selectedPayment = document.querySelector('.payment-method.selected .payment-method-name');
   const paymentName = selectedPayment ? selectedPayment.textContent : 'Não seleccionado';
 
-  if (!fullName || !phone || !city || !address) {
+  if (!fullName || !phone || !deliveryLocation) {
     showToast('Por favor, preencha todos os campos obrigatórios');
     return;
   }
@@ -783,12 +802,10 @@ function placeOrder() {
     message += `  ${i + 1}. ${item.name} (${item.color})\n     Tamanho: ${item.size} | Qtd: ${item.qty}\n     ${formatPrice(item.price * item.qty)}\n`;
   });
   message += `\nTotal: ${formatPrice(getCartTotal())}\n\n`;
-  message += 'Dados do Cliente:\n';
+  message += 'Dados da Entrega:\n';
   message += `Nome: ${fullName}\n`;
   message += `Telefone: ${phone}\n`;
-  if (email) message += `  Email: ${email}\n`;
-  message += `Cidade: ${city}\n`;
-  message += `Endereço: ${address}\n\n`;
+  message += `Local da Entrega: ${deliveryLocation}\n\n`;
   message += `Pagamento: ${paymentName}\n`;
   message += '━━━━━━━━━━━━━━━';
 
@@ -968,13 +985,7 @@ function init() {
     openCheckout();
   });
 
-  DOM.shareBtn.addEventListener('click', () => {
-    if (currentProduct) shareProduct(currentProduct.id);
-  });
 
-  DOM.whatsappShareBtn.addEventListener('click', () => {
-    if (currentProduct) shareViaWhatsApp(currentProduct.id);
-  });
 
   // ----- Checkout -----
   DOM.checkoutCloseBtn.addEventListener('click', closeCheckout);
