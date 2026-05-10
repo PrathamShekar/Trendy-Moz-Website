@@ -477,12 +477,34 @@
                     </div>
                     <div class="form-group">
                         <label for="checkout-phone">Telefone *</label>
-                        <input type="tel" class="form-input" id="checkout-phone" placeholder="+258 ..." required>
+                        <div class="phone-input-wrapper">
+                            <span class="phone-prefix">+258</span>
+                            <input type="tel" class="form-input phone-input-field" id="checkout-phone" placeholder="84 000 0000" maxlength="11" required>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="checkout-delivery-location">Local da Entrega *</label>
-                        <input type="text" class="form-input" id="checkout-delivery-location" placeholder="Cidade & Endereço" required>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label for="checkout-provincia">Província *</label>
+                            <select class="form-input form-select" id="checkout-provincia" required>
+                                <option value="" disabled selected>Seleccionar</option>
+                                <option value="Maputo Cidade">Maputo Cidade</option>
+                                <option value="Maputo Província">Maputo Província</option>
+                                <option value="Gaza">Gaza</option>
+                                <option value="Inhambane">Inhambane</option>
+                                <option value="Sofala">Sofala</option>
+                                <option value="Manica">Manica</option>
+                                <option value="Tete">Tete</option>
+                                <option value="Zambezia">Zambézia</option>
+                                <option value="Nampula">Nampula</option>
+                                <option value="Cabo Delgado">Cabo Delgado</option>
+                                <option value="Niassa">Niassa</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-endereco">Endereço *</label>
+                            <input type="text" class="form-input" id="checkout-endereco" placeholder="Bairro, Rua..." required>
+                        </div>
                     </div>
                 </div>
 

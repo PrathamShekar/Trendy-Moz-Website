@@ -817,14 +817,40 @@ function placeOrder() {
   const nome = document.getElementById('checkout-nome').value.trim();
   const apelido = document.getElementById('checkout-apelido').value.trim();
   const fullName = `${nome} ${apelido}`.trim();
-  const phone = document.getElementById('checkout-phone').value.trim();
-  const deliveryLocation = document.getElementById('checkout-delivery-location').value.trim();
+  const phoneRaw = document.getElementById('checkout-phone').value.trim().replace(/\s/g, '');
+  const provincia = document.getElementById('checkout-provincia').value;
+  const endereco = document.getElementById('checkout-endereco').value.trim();
 
   const selectedPayment = document.querySelector('.payment-method.selected .payment-method-name');
   const paymentName = selectedPayment ? selectedPayment.textContent : 'Não seleccionado';
 
-  if (!nome || !apelido || !phone || !deliveryLocation) {
-    showToast('Por favor, preencha todos os campos obrigatórios');
+  // --- Validações ---
+  // Clear previous error states
+  document.querySelectorAll('.form-input.error, .phone-input-wrapper.error').forEach(el => el.classList.remove('error'));
+
+  if (!nome || !apelido) {
+    showToast('Por favor, preencha o nome e apelido');
+    if (!nome) document.getElementById('checkout-nome').classList.add('error');
+    if (!apelido) document.getElementById('checkout-apelido').classList.add('error');
+    return;
+  }
+
+  // Validate Mozambique phone: must be 8 or 9 digits, starting with 8
+  if (!phoneRaw || !/^8[0-9]{7,8}$/.test(phoneRaw)) {
+    showToast('Número inválido. Use o formato: 84 000 0000');
+    document.querySelector('.phone-input-wrapper').classList.add('error');
+    return;
+  }
+
+  if (!provincia) {
+    showToast('Por favor, seleccione a província');
+    document.getElementById('checkout-provincia').classList.add('error');
+    return;
+  }
+
+  if (!endereco) {
+    showToast('Por favor, indique o endereço de entrega');
+    document.getElementById('checkout-endereco').classList.add('error');
     return;
   }
 
@@ -832,6 +858,9 @@ function placeOrder() {
     showToast('Por favor, seleccione um método de pagamento');
     return;
   }
+
+  // Format phone for display
+  const phoneFormatted = '+258 ' + phoneRaw;
 
   let message = 'Nova Encomenda TrendyMoz\n\n';
   message += 'Detalhes da Encomenda:\n';
@@ -841,8 +870,9 @@ function placeOrder() {
   message += `\nTotal: ${formatPrice(getCartTotal())}\n\n`;
   message += 'Dados da Entrega:\n';
   message += `Nome: ${fullName}\n`;
-  message += `Telefone: ${phone}\n`;
-  message += `Local da Entrega: ${deliveryLocation}\n\n`;
+  message += `Telefone: ${phoneFormatted}\n`;
+  message += `Província: ${provincia}\n`;
+  message += `Endereço: ${endereco}\n\n`;
   message += `Pagamento: ${paymentName}\n`;
   message += '━━━━━━━━━━━━━━━';
 
@@ -896,6 +926,31 @@ function init() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  // ----- Phone Auto-Format (XX XXX XXXX) -----
+  const phoneInput = document.getElementById('checkout-phone');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', (e) => {
+      let digits = e.target.value.replace(/\D/g, '');
+      if (digits.length > 9) digits = digits.slice(0, 9);
+      // Format: XX XXX XXXX
+      let formatted = '';
+      if (digits.length > 0) formatted += digits.slice(0, 2);
+      if (digits.length > 2) formatted += ' ' + digits.slice(2, 5);
+      if (digits.length > 5) formatted += ' ' + digits.slice(5, 9);
+      e.target.value = formatted;
+    });
+
+    // Clear error on input
+    phoneInput.addEventListener('focus', () => {
+      phoneInput.closest('.phone-input-wrapper')?.classList.remove('error');
+    });
+  }
+
+  // ----- Clear error states on form input focus -----
+  document.querySelectorAll('.form-input').forEach(input => {
+    input.addEventListener('focus', () => input.classList.remove('error'));
+  });
 
   // ----- Mostrar Produtos -----
   if (DOM.showProductsBtn) {
