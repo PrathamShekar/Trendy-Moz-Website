@@ -2,6 +2,14 @@
    TrendyMoz — Script Principal
    ============================================ */
 
+// ========== PREVENIR SCROLL RESTORATION ==========
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
 // ========== DADOS DOS PRODUTOS ==========
 const PRODUCTS = [
   {
@@ -341,19 +349,6 @@ const PRODUCTS = [
     sizes: ['M', 'L', 'XL'],
     frontImage: 'assets/38.webp',
     backImage: 'assets/39.webp',
-  },
-  {
-    id: 28,
-    name: 'New Product 6',
-    color: 'Preto',
-    price: 1500,
-    badge: 'Novo',
-    bestSeller: false,
-    category: 'oversized',
-    dateAdded: '2026-05-09',
-    sizes: ['S', 'M', 'L', 'XL'],
-    frontImage: 'assets/17.webp',
-    backImage: 'assets/18.webp',
   }
 ];
 
@@ -551,14 +546,6 @@ function renderProducts() {
       <div class="product-card-image">
         <img src="${product.frontImage}" alt="${product.name}" loading="lazy">
         ${product.badge ? `<span class="product-card-badge">${product.badge}</span>` : ''}
-        <div class="product-card-actions">
-          <button class="product-card-action-btn" onclick="event.stopPropagation(); quickAddToCart(${product.id})" title="Adicionar ao Carrinho" aria-label="Adicionar ${product.name} ao carrinho">
-            <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
-          </button>
-          <button class="product-card-action-btn" onclick="event.stopPropagation(); shareProduct(${product.id})" title="Partilhar" aria-label="Partilhar ${product.name}">
-            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-        </div>
       </div>
       <div class="product-card-info">
         <h3 class="product-card-name">${product.name}</h3>
@@ -790,15 +777,53 @@ function closeTerms() {
 // ========== PARTILHAR ==========
 
 
+// ========== COOKIE CONSENT ==========
+function initCookieConsent() {
+  const banner = document.getElementById('cookie-banner');
+  if (!banner) return;
+
+  const acceptBtn = document.getElementById('cookie-accept');
+  const rejectBtn = document.getElementById('cookie-reject');
+  const consent = localStorage.getItem('trendymoz_cookie_consent');
+
+  // If user already responded, remove banner from DOM entirely
+  if (consent !== null) {
+    banner.remove();
+    return;
+  }
+
+  // Show banner after a short delay for better UX
+  setTimeout(() => {
+    banner.classList.add('show');
+  }, 1500);
+
+  function dismissBanner(choice) {
+    localStorage.setItem('trendymoz_cookie_consent', choice);
+    banner.classList.remove('show');
+    banner.classList.add('hide');
+
+    // Remove from DOM after animation completes
+    setTimeout(() => {
+      banner.remove();
+    }, 500);
+  }
+
+  if (acceptBtn) acceptBtn.addEventListener('click', () => dismissBanner('accepted'));
+  if (rejectBtn) rejectBtn.addEventListener('click', () => dismissBanner('rejected'));
+}
+
+
 function placeOrder() {
-  const fullName = document.getElementById('checkout-name').value.trim();
+  const nome = document.getElementById('checkout-nome').value.trim();
+  const apelido = document.getElementById('checkout-apelido').value.trim();
+  const fullName = `${nome} ${apelido}`.trim();
   const phone = document.getElementById('checkout-phone').value.trim();
   const deliveryLocation = document.getElementById('checkout-delivery-location').value.trim();
 
   const selectedPayment = document.querySelector('.payment-method.selected .payment-method-name');
   const paymentName = selectedPayment ? selectedPayment.textContent : 'Não seleccionado';
 
-  if (!fullName || !phone || !deliveryLocation) {
+  if (!nome || !apelido || !phone || !deliveryLocation) {
     showToast('Por favor, preencha todos os campos obrigatórios');
     return;
   }
@@ -862,6 +887,15 @@ function init() {
   cacheDom();
   renderProducts();
   updateCartUI();
+  initCookieConsent();
+
+  // ----- Voltar ao Topo -----
+  const backToTopBtn = document.getElementById('back-to-top');
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   // ----- Mostrar Produtos -----
   if (DOM.showProductsBtn) {
