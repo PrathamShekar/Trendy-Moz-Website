@@ -603,6 +603,9 @@ function selectSize(size) {
   DOM.modalSizes.querySelectorAll('.size-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.size === size);
   });
+  // Hide size warning when a size is selected
+  const sizeWarning = document.getElementById('size-warning');
+  if (sizeWarning) sizeWarning.classList.remove('visible');
 }
 
 function toggleGalleryView(view) {
@@ -628,7 +631,15 @@ function updateQty(delta) {
 // ========== OPERAÇÕES DO CARRINHO ==========
 function addToCart(product, size, qty) {
   if (!size) {
-    showToast('Por favor, seleccione um tamanho');
+    // Show inline warning below size buttons
+    const sizeWarning = document.getElementById('size-warning');
+    if (sizeWarning) {
+      sizeWarning.classList.remove('visible');
+      // Force reflow to restart animation
+      void sizeWarning.offsetWidth;
+      sizeWarning.classList.add('visible');
+    }
+    showToast('Escolha o seu tamanho antes de continuar');
     return false;
   }
 
@@ -836,8 +847,8 @@ function placeOrder() {
   }
 
   // Validate Mozambique phone: must be 8 or 9 digits, starting with 8
-  if (!phoneRaw || !/^8[0-9]{7,8}$/.test(phoneRaw)) {
-    showToast('Número inválido. Use o formato: 84 000 0000');
+  if (!phoneRaw || !/^8[2-8][0-9]{6,7}$/.test(phoneRaw)) {
+    showToast('Número inválido. Prefixo válido: 82 a 88');
     document.querySelector('.phone-input-wrapper').classList.add('error');
     return;
   }

@@ -1133,6 +1133,30 @@ textarea {
   color: #ffffff;
 }
 
+/* Size Warning */
+.size-warning {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: rgba(198, 40, 40, 0.08);
+  border: 1px solid rgba(198, 40, 40, 0.2);
+  border-radius: var(--radius-sm);
+  color: var(--error);
+  font-size: 0.82rem;
+  font-weight: 500;
+  animation: shake 0.4s ease;
+}
+
+.size-warning svg {
+  flex-shrink: 0;
+}
+
+.size-warning.visible {
+  display: flex;
+}
+
 /* Quantity */
 .quantity-selector {
   display: flex;

@@ -87,7 +87,8 @@
             <div id="show-products-container" class="show-products-container">
                 <button id="show-products-btn" class="hero-cta" style="margin-top: 0; border: none; cursor: pointer;">
                     <span id="hero-cta-text">Ver Colecção</span>
-                    <svg id="hero-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.3s ease; width: 20px; height: 20px;">
+                    <svg id="hero-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="transition: transform 0.3s ease; width: 20px; height: 20px;">
                         <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                 </button>
@@ -95,89 +96,90 @@
 
             <!-- Products Content Wrapper -->
             <div id="products-content-wrapper" class="hidden">
-            <!-- Categories Tabs -->
-            <div class="categories-tabs reveal" id="categories-tabs">
-                <button class="category-tab active" data-category="oversized" aria-label="Ver T-shirts Oversized">T-shirts Oversized</button>
+                <!-- Categories Tabs -->
+                <div class="categories-tabs reveal" id="categories-tabs">
+                    <button class="category-tab active" data-category="oversized"
+                        aria-label="Ver T-shirts Oversized">T-shirts Oversized</button>
 
-            </div>
-
-            <!-- Sort / Filter Bar -->
-            <div class="sort-bar reveal" id="sort-bar">
-                <div class="sort-bar-left">
-                    <span class="sort-bar-count" id="sort-bar-count">5 produtos</span>
                 </div>
-                <div class="sort-bar-right">
-                    <div class="sort-dropdown" id="sort-dropdown">
-                        <button class="sort-dropdown-trigger" id="sort-dropdown-trigger" aria-haspopup="listbox"
-                            aria-expanded="false">
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M3 6h18M6 12h12M9 18h6" />
-                            </svg>
-                            <span id="sort-dropdown-label">Mais vendidos</span>
-                            <svg class="sort-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9" />
-                            </svg>
-                        </button>
-                        <ul class="sort-dropdown-menu" id="sort-dropdown-menu" role="listbox">
-                            <li class="sort-option active" data-sort="best-selling" role="option">
-                                <span>Mais vendidos</span>
-                                <svg class="sort-check" viewBox="0 0 24 24" width="14" height="14" fill="none"
-                                    stroke="currentColor" stroke-width="2.5">
-                                    <path d="M20 6L9 17l-5-5" />
+
+                <!-- Sort / Filter Bar -->
+                <div class="sort-bar reveal" id="sort-bar">
+                    <div class="sort-bar-left">
+                        <span class="sort-bar-count" id="sort-bar-count">5 produtos</span>
+                    </div>
+                    <div class="sort-bar-right">
+                        <div class="sort-dropdown" id="sort-dropdown">
+                            <button class="sort-dropdown-trigger" id="sort-dropdown-trigger" aria-haspopup="listbox"
+                                aria-expanded="false">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M3 6h18M6 12h12M9 18h6" />
                                 </svg>
-                            </li>
-                            <li class="sort-option" data-sort="name-asc" role="option">
-                                <span>Alfabeticamente, A-Z</span>
-                                <svg class="sort-check" viewBox="0 0 24 24" width="14" height="14" fill="none"
-                                    stroke="currentColor" stroke-width="2.5">
-                                    <path d="M20 6L9 17l-5-5" />
+                                <span id="sort-dropdown-label">Mais vendidos</span>
+                                <svg class="sort-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9" />
                                 </svg>
-                            </li>
-                            <li class="sort-option" data-sort="name-desc" role="option">
-                                <span>Alfabeticamente, Z-A</span>
-                                <svg class="sort-check" viewBox="0 0 24 24" width="14" height="14" fill="none"
-                                    stroke="currentColor" stroke-width="2.5">
-                                    <path d="M20 6L9 17l-5-5" />
-                                </svg>
-                            </li>
-                            <li class="sort-option" data-sort="price-asc" role="option">
-                                <span>Preço, menor ao maior</span>
-                                <svg class="sort-check" viewBox="0 0 24 24" width="14" height="14" fill="none"
-                                    stroke="currentColor" stroke-width="2.5">
-                                    <path d="M20 6L9 17l-5-5" />
-                                </svg>
-                            </li>
-                            <li class="sort-option" data-sort="price-desc" role="option">
-                                <span>Preço, maior ao menor</span>
-                                <svg class="sort-check" viewBox="0 0 24 24" width="14" height="14" fill="none"
-                                    stroke="currentColor" stroke-width="2.5">
-                                    <path d="M20 6L9 17l-5-5" />
-                                </svg>
-                            </li>
-                            <li class="sort-option" data-sort="date-asc" role="option">
-                                <span>Data, antigo ao novo</span>
-                                <svg class="sort-check" viewBox="0 0 24 24" width="14" height="14" fill="none"
-                                    stroke="currentColor" stroke-width="2.5">
-                                    <path d="M20 6L9 17l-5-5" />
-                                </svg>
-                            </li>
-                            <li class="sort-option" data-sort="date-desc" role="option">
-                                <span>Data, novo ao antigo</span>
-                                <svg class="sort-check" viewBox="0 0 24 24" width="14" height="14" fill="none"
-                                    stroke="currentColor" stroke-width="2.5">
-                                    <path d="M20 6L9 17l-5-5" />
-                                </svg>
-                            </li>
-                        </ul>
+                            </button>
+                            <ul class="sort-dropdown-menu" id="sort-dropdown-menu" role="listbox">
+                                <li class="sort-option active" data-sort="best-selling" role="option">
+                                    <span>Mais vendidos</span>
+                                    <svg class="sort-check" viewBox="0 0 24 24" width="14" height="14" fill="none"
+                                        stroke="currentColor" stroke-width="2.5">
+                                        <path d="M20 6L9 17l-5-5" />
+                                    </svg>
+                                </li>
+                                <li class="sort-option" data-sort="name-asc" role="option">
+                                    <span>Alfabeticamente, A-Z</span>
+                                    <svg class="sort-check" viewBox="0 0 24 24" width="14" height="14" fill="none"
+                                        stroke="currentColor" stroke-width="2.5">
+                                        <path d="M20 6L9 17l-5-5" />
+                                    </svg>
+                                </li>
+                                <li class="sort-option" data-sort="name-desc" role="option">
+                                    <span>Alfabeticamente, Z-A</span>
+                                    <svg class="sort-check" viewBox="0 0 24 24" width="14" height="14" fill="none"
+                                        stroke="currentColor" stroke-width="2.5">
+                                        <path d="M20 6L9 17l-5-5" />
+                                    </svg>
+                                </li>
+                                <li class="sort-option" data-sort="price-asc" role="option">
+                                    <span>Preço, menor ao maior</span>
+                                    <svg class="sort-check" viewBox="0 0 24 24" width="14" height="14" fill="none"
+                                        stroke="currentColor" stroke-width="2.5">
+                                        <path d="M20 6L9 17l-5-5" />
+                                    </svg>
+                                </li>
+                                <li class="sort-option" data-sort="price-desc" role="option">
+                                    <span>Preço, maior ao menor</span>
+                                    <svg class="sort-check" viewBox="0 0 24 24" width="14" height="14" fill="none"
+                                        stroke="currentColor" stroke-width="2.5">
+                                        <path d="M20 6L9 17l-5-5" />
+                                    </svg>
+                                </li>
+                                <li class="sort-option" data-sort="date-asc" role="option">
+                                    <span>Data, antigo ao novo</span>
+                                    <svg class="sort-check" viewBox="0 0 24 24" width="14" height="14" fill="none"
+                                        stroke="currentColor" stroke-width="2.5">
+                                        <path d="M20 6L9 17l-5-5" />
+                                    </svg>
+                                </li>
+                                <li class="sort-option" data-sort="date-desc" role="option">
+                                    <span>Data, novo ao antigo</span>
+                                    <svg class="sort-check" viewBox="0 0 24 24" width="14" height="14" fill="none"
+                                        stroke="currentColor" stroke-width="2.5">
+                                        <path d="M20 6L9 17l-5-5" />
+                                    </svg>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="products-grid" id="products-grid">
-                <!-- Produtos renderizados por JS -->
-            </div>
+                <div class="products-grid" id="products-grid">
+                    <!-- Produtos renderizados por JS -->
+                </div>
             </div> <!-- closing products-content-wrapper -->
         </div>
     </section>
@@ -332,11 +334,12 @@
                     </a>
                 </div>
             </div>
-            
+
             <div style="display: flex; justify-content: flex-end; margin-top: 2rem;">
-                <button id="back-to-top" class="btn-primary" aria-label="Voltar ao topo" title="Voltar ao topo" style="width: 44px; height: 44px; padding: 0; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--bg-alt); color: var(--text-main); border: 1px solid var(--border-color);">
+                <button id="back-to-top" class="btn-primary" aria-label="Voltar ao topo" title="Voltar ao topo"
+                    style="width: 44px; height: 44px; padding: 0; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--bg-alt); color: var(--text-main); border: 1px solid var(--border-color);">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 19V5M5 12l7-7 7 7"/>
+                        <path d="M12 19V5M5 12l7-7 7 7" />
                     </svg>
                 </button>
             </div>
@@ -371,6 +374,15 @@
                     <div class="size-options" id="modal-sizes">
                         <!-- Renderizado por JS -->
                     </div>
+                    <p class="size-warning" id="size-warning">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                        Por favor, seleccione um tamanho
+                    </p>
                 </div>
 
                 <div>
@@ -479,7 +491,8 @@
                         <label for="checkout-phone">Telefone *</label>
                         <div class="phone-input-wrapper">
                             <span class="phone-prefix">+258</span>
-                            <input type="tel" class="form-input phone-input-field" id="checkout-phone" placeholder="84 000 0000" maxlength="11" required>
+                            <input type="tel" class="form-input phone-input-field" id="checkout-phone"
+                                placeholder="82 - 88" maxlength="11" required>
                         </div>
                     </div>
 
@@ -503,7 +516,8 @@
                         </div>
                         <div class="form-group">
                             <label for="checkout-endereco">Endereço *</label>
-                            <input type="text" class="form-input" id="checkout-endereco" placeholder="Bairro, Rua..." required>
+                            <input type="text" class="form-input" id="checkout-endereco" placeholder="Bairro, Rua..."
+                                required>
                         </div>
                     </div>
                 </div>
@@ -621,14 +635,16 @@
         <div class="cookie-banner-inner">
             <div class="cookie-banner-content">
                 <div class="cookie-banner-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        <path d="M9 12l2 2 4-4"/>
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <path d="M9 12l2 2 4-4" />
                     </svg>
                 </div>
                 <div class="cookie-banner-text">
                     <p class="cookie-banner-title">A sua privacidade importa</p>
-                    <p class="cookie-banner-desc">Utilizamos cookies para melhorar a sua experiência de navegação e guardar as suas preferências. Sem rastreamento de terceiros.</p>
+                    <p class="cookie-banner-desc">Utilizamos cookies para melhorar a sua experiência de navegação e
+                        guardar as suas preferências. Sem rastreamento de terceiros.</p>
                 </div>
             </div>
             <div class="cookie-banner-actions">
